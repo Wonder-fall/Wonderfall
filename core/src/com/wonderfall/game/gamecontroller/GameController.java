@@ -37,8 +37,6 @@ public class GameController {
 	}
 
 	public static void triggerObjectLoss(Actor actor) {
-		GameState.LIVES_LEFT -= 1;
-
         ShellActor.hints.showHint(actor.getX(), actor.getY() + 20f,
 				Constants.OBJECT_LOSS_WORDS[MathUtils.random(0, Constants.OBJECT_LOSS_WORDS.length - 1)]);
 		
@@ -50,6 +48,7 @@ public class GameController {
 	}
 
     public static void triggerFramePassed() {
+    	GameState.TIMER -= Gdx.graphics.getDeltaTime();
         GameState.DIFFICULTY += Gdx.graphics.getDeltaTime() * LevelsManager.curLevel.getDifficulty().getIncreaseOverTime();
     }
 }

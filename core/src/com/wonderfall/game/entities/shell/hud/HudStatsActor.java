@@ -11,7 +11,7 @@ import com.wonderfall.game.utils.GameState;
 public class HudStatsActor extends Actor {
 
 	Label score;
-	Label lives;
+	Label timeLeft;
 
 	Table container;
 
@@ -20,8 +20,8 @@ public class HudStatsActor extends Actor {
 	public HudStatsActor() {
 		Label scoreLabel = new Label("Score:", Assets.skin);
 		score = new Label("" + GameState.SCORE, Assets.skin);
-		Label livesLabel = new Label("Lives:", Assets.skin);
-		lives = new Label("" + GameState.LIVES_LEFT, Assets.skin);
+		Label timeLeftLabel = new Label("Time Left:", Assets.skin);
+		timeLeft = new Label("" + GameState.TIMER, Assets.skin);
 
 		container = new Table(Assets.skin);
 		container.align(Align.left | Align.top);
@@ -30,9 +30,8 @@ public class HudStatsActor extends Actor {
 		container.add(scoreLabel);
 		container.add(score);
 		container.row();
-		container.add(livesLabel);
-		container.add(lives);
-		
+		container.add(timeLeftLabel);
+		container.add(timeLeft);
 
 		// font = new BitmapFont();
 	}
@@ -43,9 +42,6 @@ public class HudStatsActor extends Actor {
 
 		container.setPosition(0, getStage().getHeight());
 		container.draw(batch, parentAlpha);
-
-		// font.draw(batch, ""+GameState.LIVES_LEFT, 100,
-		// getStage().getHeight());
 	}
 
 	@Override
@@ -53,6 +49,6 @@ public class HudStatsActor extends Actor {
 		super.act(delta);
 
 		score.setText("" + String.format("%.2f", GameState.DIFFICULTY));
-		lives.setText("" + GameState.LIVES_LEFT);
+		timeLeft.setText("" + (int) GameState.TIMER);
 	}
 }

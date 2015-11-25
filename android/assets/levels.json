@@ -5,14 +5,13 @@
       "objective":
       {
         "type":"survival",
-        "params":"100"
+        "params":100
       },
       "difficulty":
       {
         "initialSpawnRate": 1f,
         "initialSpawnerVelocity": 2f,
         "initialObjectsVelocity":50f,
-        "initialLives":3,
         "increaseOverTime":0.5f
       },
       "dependencies": [],
@@ -26,14 +25,13 @@
       "objective":
       {
         "type":"survival",
-        "params":"150"
+        "params":150
       },
       "difficulty":
       {
         "initialSpawnRate": 2,
         "initialSpawnerVelocity": 1,
         "initialObjectsVelocity":1,
-        "initialLives":5,
         "increaseOverTime":1
       },
       "dependencies": [],
@@ -47,14 +45,13 @@
       "objective":
       {
         "type":"survival",
-        "params":"150"
+        "params":150
       },
       "difficulty":
       {
         "initialSpawnRate": 3,
         "initialSpawnerVelocity": 1,
         "initialObjectsVelocity":1,
-        "initialLives":5,
         "increaseOverTime":1
       },
       "dependencies": [],

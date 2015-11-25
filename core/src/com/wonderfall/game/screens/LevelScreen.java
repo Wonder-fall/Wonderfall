@@ -8,12 +8,11 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.entities.background.BackgroundActor;
 import com.wonderfall.game.entities.enemy.EnemyActor;
-import com.wonderfall.game.entities.shell.ShellActor;
-import com.wonderfall.game.entities.shell.hud.HudEventHintActor;
-import com.wonderfall.game.entities.shell.hud.HudStatsActor;
 import com.wonderfall.game.entities.player.PlayerActor;
 import com.wonderfall.game.entities.player.PlayerTouchHandlerActor;
+import com.wonderfall.game.entities.shell.ShellActor;
 import com.wonderfall.game.gamecontroller.GameController;
+import com.wonderfall.game.level.Level;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.GameState;
@@ -32,12 +31,13 @@ public class LevelScreen implements Screen {
     public static ShellActor shell;
 	public static BackgroundActor bg;
 	public static EnemyActor enemy;
+	
+	public Level curLevel = LevelsManager.curLevel;
 
 	public LevelScreen(WonderfallGame game) {
 		this.game = game;
-		this.gameState = new GameState(LevelsManager.curLevel.getDifficulty().getInitialLives());
+		this.gameState = new GameState(curLevel.getObjective().getParams());
 	}
-
 	@Override
 	public void show() {
 		stage = new Stage(new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT));
