@@ -11,7 +11,6 @@ import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.entities.shell.hud.HudEventHintActor;
 import com.wonderfall.game.entities.shell.hud.HudStatsActor;
 import com.wonderfall.game.utils.Assets;
-import com.wonderfall.game.utils.GameState;
 
 public class ShellActor extends Group {
 
