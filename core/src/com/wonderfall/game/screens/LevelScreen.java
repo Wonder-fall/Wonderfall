@@ -26,8 +26,6 @@ public class LevelScreen implements Screen {
 	GameState gameState;
 
 	public static PlayerActor player;
-	//public static HudStatsActor hudStats;
-	//public static HudEventHintActor hudHints;
     public static ShellActor shell;
 	public static BackgroundActor bg;
 	public static EnemyActor enemy;
@@ -41,8 +39,8 @@ public class LevelScreen implements Screen {
 	@Override
 	public void show() {
 		stage = new Stage(new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT));
-		
-		Gdx.input.setInputProcessor(stage);
+
+        Gdx.input.setInputProcessor(stage);
 
 		player = new PlayerActor(Assets.player);
 		enemy = new EnemyActor(Assets.enemy, LevelsManager.curLevel.getDifficulty());
@@ -66,6 +64,9 @@ public class LevelScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
+
+        if (GameState.IS_PAUSED) return;
+
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		stage.act(delta);

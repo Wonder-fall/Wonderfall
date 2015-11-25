@@ -53,4 +53,9 @@ public class GameController {
     	GameState.TIMER -= Gdx.graphics.getDeltaTime();
         GameState.DIFFICULTY += Gdx.graphics.getDeltaTime() * LevelsManager.curLevel.getDifficulty().getIncreaseOverTime();
     }
+
+    public static void triggerGamePaused() {
+        ShellActor.hints.showHint(0, 0,"Pause");
+        GameState.IS_PAUSED = true;
+    }
 }
