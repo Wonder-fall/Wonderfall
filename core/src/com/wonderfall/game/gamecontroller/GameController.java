@@ -3,6 +3,7 @@ package com.wonderfall.game.gamecontroller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.wonderfall.game.entities.shell.ShellActor;
 import com.wonderfall.game.screens.LevelScreen;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.GameState;
@@ -37,8 +38,8 @@ public class GameController {
 
 	public static void triggerObjectLoss(Actor actor) {
 		GameState.LIVES_LEFT -= 1;
-		
-		LevelScreen.hudHints.showHint(actor.getX(), actor.getY() + 20f,
+
+        ShellActor.hints.showHint(actor.getX(), actor.getY() + 20f,
 				Constants.OBJECT_LOSS_WORDS[MathUtils.random(0, Constants.OBJECT_LOSS_WORDS.length - 1)]);
 		
 		LevelScreen.enemy.removeActor(actor);

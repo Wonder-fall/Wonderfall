@@ -8,8 +8,9 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.entities.background.BackgroundActor;
 import com.wonderfall.game.entities.enemy.EnemyActor;
-import com.wonderfall.game.entities.hud.HudEventHintActor;
-import com.wonderfall.game.entities.hud.HudStatsActor;
+import com.wonderfall.game.entities.shell.ShellActor;
+import com.wonderfall.game.entities.shell.hud.HudEventHintActor;
+import com.wonderfall.game.entities.shell.hud.HudStatsActor;
 import com.wonderfall.game.entities.player.PlayerActor;
 import com.wonderfall.game.entities.player.PlayerTouchHandlerActor;
 import com.wonderfall.game.gamecontroller.GameController;
@@ -26,8 +27,9 @@ public class LevelScreen implements Screen {
 	GameState gameState;
 
 	public static PlayerActor player;
-	public static HudStatsActor hudStats;
-	public static HudEventHintActor hudHints;
+	//public static HudStatsActor hudStats;
+	//public static HudEventHintActor hudHints;
+    public static ShellActor shell;
 	public static BackgroundActor bg;
 	public static EnemyActor enemy;
 
@@ -44,8 +46,8 @@ public class LevelScreen implements Screen {
 
 		player = new PlayerActor(Assets.player);
 		enemy = new EnemyActor(Assets.enemy, LevelsManager.curLevel.getDifficulty());
-		hudStats = new HudStatsActor();
-		hudHints = new HudEventHintActor();
+        shell = new ShellActor();
+
 		bg = new BackgroundActor();
 
 		// background
@@ -59,13 +61,11 @@ public class LevelScreen implements Screen {
 		stage.addActor(enemy);
 
 		// HUD
-		stage.addActor(hudStats);
-		stage.addActor(hudHints);
+		stage.addActor(shell);
 	}
 
 	@Override
 	public void render(float delta) {
-		//Gdx.gl.glClearColor(1f, 1f, 1f, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		stage.act(delta);
@@ -104,5 +104,4 @@ public class LevelScreen implements Screen {
 		// TODO Auto-generated method stub
 
 	}
-
 }

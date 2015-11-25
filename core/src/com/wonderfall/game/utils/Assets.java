@@ -18,6 +18,8 @@ public class Assets {
 	public static Texture background;
 	public static Texture enemy;
 
+    public static Texture pause;
+
 	public static void load() {
 
 		skin = new Skin(Gdx.files.internal("data/uiskin.json"));
@@ -32,5 +34,7 @@ public class Assets {
 		background = new Texture(Gdx.files.internal("backgrounds/background1.jpg"));
 		
 		enemy = new Texture(Gdx.files.internal("enemy/enemy.png"));
+
+        pause = new Texture(Gdx.files.internal("pause.png"));
 	}
 }
