@@ -1,4 +1,4 @@
-package com.wonderfall.game.player;
+package com.wonderfall.game.entities.player;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;

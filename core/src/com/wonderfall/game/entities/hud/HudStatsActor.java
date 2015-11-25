@@ -1,4 +1,4 @@
-package com.wonderfall.game.hud;
+package com.wonderfall.game.entities.hud;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;

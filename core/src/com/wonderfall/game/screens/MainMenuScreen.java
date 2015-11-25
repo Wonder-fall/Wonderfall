@@ -15,7 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Container;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.wonderfall.game.WonderfallGame;
-import com.wonderfall.game.background.BackgroundActor;
+import com.wonderfall.game.entities.background.BackgroundActor;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.LevelsManager;

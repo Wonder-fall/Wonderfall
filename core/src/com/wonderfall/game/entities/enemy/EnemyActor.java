@@ -1,4 +1,4 @@
-package com.wonderfall.game.enemy;
+package com.wonderfall.game.entities.enemy;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.moveTo;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;

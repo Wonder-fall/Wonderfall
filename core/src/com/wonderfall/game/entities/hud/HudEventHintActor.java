@@ -1,4 +1,4 @@
-package com.wonderfall.game.hud;
+package com.wonderfall.game.entities.hud;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
 
