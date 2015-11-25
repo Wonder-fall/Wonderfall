@@ -21,14 +21,10 @@ import com.wonderfall.game.utils.LevelsManager;
 
 import java.util.ArrayList;
 
-/**
- * Created by Tomhivert on 25/11/2015.
- */
 public class LevelSelectScreen implements Screen
 {
     Stage stage;
     WonderfallGame game;
-
 
     public LevelSelectScreen(WonderfallGame game)
     {
@@ -95,15 +91,6 @@ public class LevelSelectScreen implements Screen
         table.center();
         table.align(Align.center);
         stage.addActor(table);
-
-
-
-
-
-
-
-
-
     }
 
     @Override
@@ -129,5 +116,4 @@ public class LevelSelectScreen implements Screen
         // TODO Auto-generated method stub
 
     }
-
 }

@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ActorGestureListener;
 import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.utils.Constants;
+import com.wonderfall.game.utils.GameState;
 
 public class PlayerTouchHandlerActor extends Actor {
 
@@ -21,14 +22,18 @@ public class PlayerTouchHandlerActor extends Actor {
 
 			@Override
 			public void fling(InputEvent event, float velocityX, float velocityY, int button) {
-				player.move(velocityX);
-				GameController.triggerPlayerMove();
+                if (!GameState.IS_PAUSED) {
+                    player.move(velocityX);
+                    GameController.triggerPlayerMove();
+                }
 			}
 
 			@Override
 			public void tap(InputEvent event, float x, float y, int count, int button) {
-				player.jump();
-				GameController.triggerPlayerJump();
+                if (!GameState.IS_PAUSED) {
+                    player.jump();
+                    GameController.triggerPlayerJump();
+                }
 			}
 		});
 	}

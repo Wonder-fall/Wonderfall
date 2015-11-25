@@ -8,6 +8,7 @@ public class GameState {
 	// USED FOR FASTER SPAWNING VELOCITY / MORE SPAWNING RATE / HIGHER CHANCE TO
 	// SPAWN BOSS
 	public static float DIFFICULTY;
+    public static boolean IS_PAUSED = false;
 
 	public GameState(float initialTimer) {
 		LIVES_LEFT = 0;

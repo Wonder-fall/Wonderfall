@@ -55,7 +55,10 @@ public class GameController {
     }
 
     public static void triggerGamePaused() {
-        ShellActor.hints.showHint(0, 0,"Pause");
         GameState.IS_PAUSED = true;
+    }
+
+    public static void triggerGameResumed() {
+        GameState.IS_PAUSED = false;
     }
 }

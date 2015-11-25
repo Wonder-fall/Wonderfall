@@ -58,22 +58,22 @@ public class LevelScreen implements Screen {
 		// enemy spawner (group)
 		stage.addActor(enemy);
 
-		// HUD
+		// shell
 		stage.addActor(shell);
 	}
 
 	@Override
 	public void render(float delta) {
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        if (GameState.IS_PAUSED) return;
+        if (!GameState.IS_PAUSED) {
+            stage.act(delta);
 
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+            // Indicate all actors performed the act method
+            GameController.triggerFramePassed();
+        }
 
-		stage.act(delta);
-		stage.draw();
-
-        // Indicate all actors performed the act method
-        GameController.triggerFramePassed();
+        stage.draw();
 	}
 
 	@Override

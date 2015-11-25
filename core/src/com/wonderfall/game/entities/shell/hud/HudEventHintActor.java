@@ -11,7 +11,6 @@ import com.wonderfall.game.utils.Assets;
 public class HudEventHintActor extends Group {
 
 	public HudEventHintActor() {
-
 	}
 
 	@Override

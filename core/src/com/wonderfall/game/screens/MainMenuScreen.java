@@ -98,5 +98,4 @@ public class MainMenuScreen implements Screen {
 		// TODO Auto-generated method stub
 
 	}
-
 }
