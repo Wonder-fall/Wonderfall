@@ -25,7 +25,7 @@ public class Constants {
 	// THE WALL
 	public static final float PLAYER_BOUNCE_FORCE = -0.3f;
 	// THE TOUCH AREA USED FOR TAP(JUMP)/FLING(MOVE) OF THE PLAYER
-	public static final Rectangle PLAYER_TOUCH_AREA = new Rectangle(0, PLAYER_FLOOR_HEIGHT, WORLD_WIDTH, 200f);
+	public static final Rectangle PLAYER_TOUCH_AREA = new Rectangle(0, 0, WORLD_WIDTH, 300f);
 
 	public static final String[] OBJECT_LOSS_WORDS = new String[] { "Shit!", "Damn!", "Ouch!", "****!!", "ARGGG!!!" };
 	// THE ENEMY INITIAL DRAWING POSITION
