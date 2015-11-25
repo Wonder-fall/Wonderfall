@@ -1,10 +1,12 @@
 package com.wonderfall.game.gamecontroller;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.wonderfall.game.screens.GameScreen;
+import com.wonderfall.game.screens.LevelScreen;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.GameState;
+import com.wonderfall.game.utils.LevelsManager;
 
 /**
  * This class is responsible for managing event handlers from the different
@@ -36,14 +38,17 @@ public class GameController {
 	public static void triggerObjectLoss(Actor actor) {
 		GameState.LIVES_LEFT -= 1;
 		
-		GameScreen.hudHints.showHint(actor.getX(), actor.getY() + 20f,
+		LevelScreen.hudHints.showHint(actor.getX(), actor.getY() + 20f,
 				Constants.OBJECT_LOSS_WORDS[MathUtils.random(0, Constants.OBJECT_LOSS_WORDS.length - 1)]);
 		
-		GameScreen.enemy.removeActor(actor);
+		LevelScreen.enemy.removeActor(actor);
 	}
 
 	public static void triggerObjectWin(Actor actor) {
-		// GameState.SCORE += 1;
-		GameScreen.enemy.removeActor(actor);
+		LevelScreen.enemy.removeActor(actor);
 	}
+
+    public static void triggerFramePassed() {
+        GameState.DIFFICULTY += Gdx.graphics.getDeltaTime() * LevelsManager.curLevel.getDifficulty().getIncreaseOverTime();
+    }
 }

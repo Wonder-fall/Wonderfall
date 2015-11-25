@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.wonderfall.game.entities.BoxedImageActor;
 import com.wonderfall.game.gamecontroller.GameController;
-import com.wonderfall.game.screens.GameScreen;
+import com.wonderfall.game.screens.LevelScreen;
 import com.wonderfall.game.utils.Constants;
 
 public class FallingObjectActor extends BoxedImageActor {
@@ -28,7 +28,7 @@ public class FallingObjectActor extends BoxedImageActor {
 		setY(getY() + delta * velocity.y);
 
 		// if hit player
-		if (this.isCollidedWith(GameScreen.player.getBoundingBox())) {
+		if (this.isCollidedWith(LevelScreen.player.getBoundingBox())) {
 			GameController.triggerObjectWin(this);
 		}
 		// if hit floor

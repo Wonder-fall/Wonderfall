@@ -57,7 +57,7 @@ public class MainMenuScreen implements Screen {
 			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
 
 				LevelsManager.setLevel(0);
-				game.setScreen(new GameScreen(game));
+				game.setScreen(new LevelScreen(game));
 				return true;
 			}
 

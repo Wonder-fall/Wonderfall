@@ -58,8 +58,6 @@ public class EnemyActor extends Group {
 
 		setBounds(getX(), getY(), sprite.getWidth(), sprite.getHeight());
 
-		GameState.DIFFICULTY += delta * difficulty.getIncreaseOverTime();
-
 		// spawn
 		if (!hasActions() && MathUtils.random() < delta * (difficulty.getInitialSpawnRate() * GameState.DIFFICULTY)) {
 
