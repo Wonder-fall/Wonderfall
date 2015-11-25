@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.utils.Assets;
+import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.GameState;
 
 public class HudStatsActor extends Actor {
@@ -15,8 +16,6 @@ public class HudStatsActor extends Actor {
 
 	Table container;
 
-	// BitmapFont font;
-
 	public HudStatsActor() {
 		Label scoreLabel = new Label("Score:", Assets.skin);
 		score = new Label("" + GameState.SCORE, Assets.skin);
@@ -24,23 +23,21 @@ public class HudStatsActor extends Actor {
 		timeLeft = new Label("" + GameState.TIMER, Assets.skin);
 
 		container = new Table(Assets.skin);
-		container.align(Align.left | Align.top);
+		container.align(Align.topLeft);
 
-		container.row();
-		container.add(scoreLabel);
+		container.add(scoreLabel).align(Align.left);
 		container.add(score);
 		container.row();
-		container.add(timeLeftLabel);
+		container.add(timeLeftLabel).align(Align.left);
 		container.add(timeLeft);
 
-		// font = new BitmapFont();
+		container.setPosition(0, Constants.WORLD_HEIGHT);
 	}
 
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		super.draw(batch, parentAlpha);
 
-		container.setPosition(0, getStage().getHeight());
 		container.draw(batch, parentAlpha);
 	}
 
@@ -48,7 +45,7 @@ public class HudStatsActor extends Actor {
 	public void act(float delta) {
 		super.act(delta);
 
-		score.setText("" + String.format("%.2f", GameState.DIFFICULTY));
+		score.setText("" + (int) GameState.SCORE);
 		timeLeft.setText("" + (int) GameState.TIMER);
 	}
 }

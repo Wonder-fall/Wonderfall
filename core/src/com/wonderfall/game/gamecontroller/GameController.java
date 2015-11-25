@@ -45,6 +45,8 @@ public class GameController {
 
 	public static void triggerObjectWin(Actor actor) {
 		LevelScreen.enemy.removeActor(actor);
+		
+		GameState.SCORE += 10;
 	}
 
     public static void triggerFramePassed() {
