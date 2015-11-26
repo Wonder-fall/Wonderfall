@@ -33,4 +33,8 @@ public class LevelsManager {
 		if (levels != null && levels.getLevels().size() >= index)
 			curLevel = levels.getLevels().get(index);
 	}
+	public static int getLevelsAmmount()
+	{
+		return levels.getLevels().size();
+	}
 }

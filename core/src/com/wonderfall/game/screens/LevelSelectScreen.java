@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.ui.Container;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -25,6 +27,8 @@ public class LevelSelectScreen implements Screen
 {
     Stage stage;
     WonderfallGame game;
+    Table table;
+    ArrayList<TextButton> buttonList;
 
     public LevelSelectScreen(WonderfallGame game)
     {
@@ -52,44 +56,35 @@ public class LevelSelectScreen implements Screen
         BackgroundActor background = new BackgroundActor();
 
         background.setBounds(0, 0, stage.getWidth(), stage.getHeight());
-        ArrayList<TextButton> buttonList = new ArrayList<TextButton>();
+
+        buttonList = new ArrayList<TextButton>();
+
         stage.addActor(background);
 
-        TextButton button = new TextButton("1", Assets.skin);
-        Table table = new Table();
-        table.add(button);
-        buttonList.add(button);
-        table.setBounds(0, 0, stage.getWidth() / 2, stage.getHeight() / 2);
+        Label title = new Label("Choose a level", Assets.skin);
+        Container<Actor> lblContainer = new Container<Actor>(title);
 
-        button.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                LevelsManager.setLevel(0);
-                game.setScreen(new MainMenuScreen(game));
+        lblContainer.setPosition(Constants.WORLD_WIDTH / 2, (Constants.WORLD_HEIGHT / 10) * 9);
+        lblContainer.setTransform(true);
+        lblContainer.scaleBy(1.5f, 1f);
+
+        stage.addActor(lblContainer);
+
+
+        table = new Table();
+        table.setBounds(0, 0, stage.getWidth(), stage.getHeight());
+
+        for(int rows = 1; rows<6;rows++)
+        {
+            for(int columns = 1;columns<5;columns++)
+            {
+                addButton((rows-1)*4+columns);
             }
-        });
-        TextButton button2 = new TextButton("2", Assets.skin);
-        table.add(button2);
-        buttonList.add(button2);
-        button2.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                LevelsManager.setLevel(1);
-                game.setScreen(new MainMenuScreen(game));
-            }
-        });
-        TextButton button3 = new TextButton("3", Assets.skin);
-        table.add(button3);
-        buttonList.add(button3);
-        button3.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                LevelsManager.setLevel(2);
-                game.setScreen(new MainMenuScreen(game));
-            }
-        });
+            table.row();
+        }
+        buttonList.get(2).setDisabled(true);
         table.center();
-        table.align(Align.center);
+
         stage.addActor(table);
     }
 
@@ -115,5 +110,21 @@ public class LevelSelectScreen implements Screen
     public void dispose() {
         // TODO Auto-generated method stub
 
+    }
+    public void addButton(final int buttonNumber)
+    {
+        if(buttonNumber>0&&buttonNumber>buttonList.size()&&buttonNumber<=LevelsManager.getLevelsAmmount()) {
+            Integer num = new Integer(buttonNumber);
+            TextButton button = new TextButton(num.toString(), Assets.skin);
+            table.add(button).size(64f, 64f).space(0,0,36f,36f);
+            buttonList.add(button);
+            button.addListener(new ChangeListener() {
+                @Override
+                public void changed(ChangeEvent event, Actor actor) {
+                    LevelsManager.setLevel(buttonNumber - 1);
+                    game.setScreen(new MainMenuScreen(game));
+                }
+            });
+        }
     }
 }
