@@ -16,6 +16,8 @@ public class Assets {
 	public static Texture enemy;
     public static Texture pause;
     public static Texture resume;
+	public static Texture button;
+	public static Texture button_locked;
 
 	public static void load() {
 		skin = new Skin(Gdx.files.internal("data/uiskin.json"));
@@ -29,5 +31,8 @@ public class Assets {
 		enemy = new Texture(Gdx.files.internal("enemy/enemy.png"));
         pause = new Texture(Gdx.files.internal("pause.png"));
         resume = new Texture(Gdx.files.internal("play.png"));
+		button = new Texture(Gdx.files.internal("buttons/button_enabled"));
+		button_locked = new Texture(Gdx.files.internal("buttons/button_disabled"));
+
 	}
 }
