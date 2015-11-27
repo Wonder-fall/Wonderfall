@@ -84,8 +84,7 @@ public class LevelScreen implements Screen {
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-
+        GameController.triggerGamePaused();
 	}
 
 	@Override
