@@ -29,6 +29,7 @@ public class Assets {
 	public static Texture enemy;
 	public static Texture pause;
 	public static Texture resume;
+	public static Texture back;
 	public static Texture button;
 	public static Texture button_locked;
 	public static Texture button_unknown;
@@ -60,6 +61,7 @@ public class Assets {
 		background = new Texture(Gdx.files.internal("backgrounds/background1.jpg"));
 		enemy = new Texture(Gdx.files.internal("enemy/enemy.png"));
 		pause = new Texture(Gdx.files.internal("pause.png"));
+		back = new Texture(Gdx.files.internal("back.png"));
 		resume = new Texture(Gdx.files.internal("play.png"));
 		button = new Texture(Gdx.files.internal("buttons/button_enabled.png"));
 		button_locked = new Texture(Gdx.files.internal("buttons/button_locked.png"));

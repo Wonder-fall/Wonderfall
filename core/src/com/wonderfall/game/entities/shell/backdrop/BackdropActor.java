@@ -16,7 +16,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Align;
+import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.gamecontroller.GameController;
+import com.wonderfall.game.screens.LevelSelectScreen;
+import com.wonderfall.game.screens.MainMenuScreen;
 import com.wonderfall.game.utils.Assets;
 
 public class BackdropActor extends Group {
@@ -25,26 +28,43 @@ public class BackdropActor extends Group {
     private ShapeRenderer shapeRenderer;
     static boolean projectionMatrixSet;
     static Button resumeButton;
+    static Button backButton;
     Actor self = this;
+    WonderfallGame game;
 
-    public BackdropActor() {
+    public BackdropActor(WonderfallGame g) {
+        game = g;
         shapeRenderer = new ShapeRenderer();
         projectionMatrixSet = false;
 
         resumeButton = new ImageButton(new SpriteDrawable(new Sprite(Assets.resume)));
+        backButton = new ImageButton(new SpriteDrawable(new Sprite(Assets.back)));
 
         container = new Table(Assets.skin);
-        container.row();
-        container.add(resumeButton);
         container.align(Align.center);
-        container.setTouchable(Touchable.enabled);
-        resumeButton.setTouchable(Touchable.enabled);
+        container.row();
 
-        container.addListener(new ClickListener() {
+        container.add(resumeButton);
+        container.add(backButton);
+
+        container.setTouchable(Touchable.childrenOnly);
+        resumeButton.setTouchable(Touchable.enabled);
+        backButton.setTouchable(Touchable.enabled);
+
+        resumeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 self.setVisible(false);
                 GameController.triggerGameResumed();
+            }
+        });
+
+        backButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                self.setVisible(false);
+                GameController.triggerGameResumed();
+                game.setScreen(new LevelSelectScreen(game));
             }
         });
 

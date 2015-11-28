@@ -11,6 +11,7 @@ import com.wonderfall.game.entities.enemy.EnemyActor;
 import com.wonderfall.game.entities.player.PlayerActor;
 import com.wonderfall.game.entities.player.PlayerTouchHandlerActor;
 import com.wonderfall.game.entities.shell.ShellActor;
+import com.wonderfall.game.entities.shell.backdrop.BackdropActor;
 import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.level.Level;
 import com.wonderfall.game.utils.Assets;
@@ -27,6 +28,7 @@ public class LevelScreen implements Screen {
 	public static ShellActor shell;
 	public static BackgroundActor bg;
 	public static EnemyActor enemy;
+    public static BackdropActor backdrop;
 
 	public Level curLevel = LevelsManager.curLevel;
 
@@ -43,7 +45,9 @@ public class LevelScreen implements Screen {
 
 		player = new PlayerActor(Assets.player);
 		enemy = new EnemyActor(Assets.enemy, LevelsManager.curLevel.getDifficulty());
-		shell = new ShellActor();
+		shell = new ShellActor(game);
+        backdrop = new BackdropActor(game);
+        backdrop.setVisible(false);
 
 		bg = new BackgroundActor();
 
@@ -59,6 +63,9 @@ public class LevelScreen implements Screen {
 
 		// shell
 		stage.addActor(shell);
+
+        // backdrop
+        stage.addActor(backdrop);
 	}
 
 	@Override
@@ -83,7 +90,8 @@ public class LevelScreen implements Screen {
 
 	@Override
 	public void pause() {
-		GameController.triggerGamePaused();
+        backdrop.setVisible(true);
+        GameController.triggerGamePaused();
 	}
 
 	@Override
