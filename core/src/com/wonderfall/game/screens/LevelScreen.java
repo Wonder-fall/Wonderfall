@@ -15,15 +15,13 @@ import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.level.Level;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
-import com.wonderfall.game.utils.GameState;
+import com.wonderfall.game.utils.LevelState;
 import com.wonderfall.game.utils.LevelsManager;
 
 public class LevelScreen implements Screen {
 
 	WonderfallGame game;
 	Stage stage;
-
-	GameState gameState;
 
 	public static PlayerActor player;
 	public static ShellActor shell;
@@ -34,7 +32,7 @@ public class LevelScreen implements Screen {
 
 	public LevelScreen(WonderfallGame game) {
 		this.game = game;
-		this.gameState = new GameState(curLevel.getObjective().getParams());
+		LevelState.loadLevelState((int)curLevel.getObjective().getParams());
 	}
 
 	@Override
@@ -66,8 +64,8 @@ public class LevelScreen implements Screen {
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-		if (!GameState.IS_PAUSED) {
+		
+		if (!LevelState.IS_PAUSED) {
 			stage.act(delta);
 
 			// Indicate all actors performed the act method

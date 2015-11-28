@@ -6,6 +6,7 @@ import com.wonderfall.game.entities.BoxedImageActor;
 import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.screens.LevelScreen;
 import com.wonderfall.game.utils.Constants;
+import com.wonderfall.game.utils.LevelState;
 
 public class FallingObjectActor extends BoxedImageActor {
 
@@ -24,8 +25,13 @@ public class FallingObjectActor extends BoxedImageActor {
 	public void act(float delta) {
 		super.act(delta);
 
-		setX(getX() + delta * velocity.x);
-		setY(getY() + delta * velocity.y);
+		if (!LevelState.IS_TIME_SLOWED) {
+			setX(getX() + delta * velocity.x);
+			setY(getY() + delta * velocity.y);
+		} else {
+			setX(getX() + delta * velocity.x * Constants.OBJECT_TIME_SLOW_FACTOR);
+			setY(getY() + delta * velocity.y * Constants.OBJECT_TIME_SLOW_FACTOR);
+		}
 
 		// if hit player
 		if (this.isCollidedWith(LevelScreen.player.getBoundingBox())) {

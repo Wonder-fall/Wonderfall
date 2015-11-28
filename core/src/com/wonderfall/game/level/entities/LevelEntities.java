@@ -4,14 +4,17 @@ import java.util.ArrayList;
 
 import com.wonderfall.game.level.entities.objects.LevelBadObject;
 import com.wonderfall.game.level.entities.objects.LevelGoodObject;
+import com.wonderfall.game.level.entities.objects.LevelSpecialObject;
 
 public class LevelEntities {
 
 	private String background;
 	private int goodRatio;
 	private int badRatio;
+	private int specialRatio;
 	private ArrayList<LevelGoodObject> goodObjects;
 	private ArrayList<LevelBadObject> badObjects;
+	private ArrayList<LevelSpecialObject> specialObjects;
 
 	public String getBackground() {
 		return background;
@@ -25,6 +28,10 @@ public class LevelEntities {
 		return badRatio;
 	}
 
+	public int getSpecialRatio() {
+		return specialRatio;
+	}
+	
 	public ArrayList<LevelGoodObject> getGoodObjects() {
 		return goodObjects;
 	}
@@ -33,4 +40,7 @@ public class LevelEntities {
 		return badObjects;
 	}
 
+	public ArrayList<LevelSpecialObject> getSpecialObjects() {
+		return specialObjects;
+	}
 }

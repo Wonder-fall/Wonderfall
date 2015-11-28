@@ -14,9 +14,10 @@ import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.entities.shell.backdrop.BackdropActor;
 import com.wonderfall.game.entities.shell.hud.HudEventHintActor;
 import com.wonderfall.game.entities.shell.hud.HudStatsActor;
+import com.wonderfall.game.entities.shell.inventory.InventoryActor;
 import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.utils.Assets;
-import com.wonderfall.game.utils.GameState;
+import com.wonderfall.game.utils.LevelState;
 
 public class ShellActor extends Group {
 
@@ -24,14 +25,17 @@ public class ShellActor extends Group {
     static Button pauseButton;
     public static HudStatsActor stats;
     public static HudEventHintActor hints;
+    public static InventoryActor inventory;
     public static BackdropActor backdrop;
 
     public ShellActor() {
         stats = new HudStatsActor();
         hints = new HudEventHintActor();
-
+        inventory = new InventoryActor();
+        
         this.addActor(stats);
         this.addActor(hints);
+        this.addActor(inventory);
 
         pauseButton = new ImageButton(new SpriteDrawable(new Sprite(Assets.pause)));
 
@@ -45,7 +49,7 @@ public class ShellActor extends Group {
         container.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                if (!GameState.IS_PAUSED) {
+                if (!LevelState.IS_PAUSED) {
                     GameController.triggerGamePaused();
                     backdrop.setVisible(true);
                 }

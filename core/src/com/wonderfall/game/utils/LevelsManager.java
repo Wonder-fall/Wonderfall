@@ -10,6 +10,7 @@ import com.wonderfall.game.level.difficulty.LevelDifficulty;
 import com.wonderfall.game.level.entities.LevelEntities;
 import com.wonderfall.game.level.entities.objects.LevelBadObject;
 import com.wonderfall.game.level.entities.objects.LevelGoodObject;
+import com.wonderfall.game.level.entities.objects.LevelSpecialObject;
 import com.wonderfall.game.level.objective.LevelObjective;
 
 public class LevelsManager {
@@ -27,32 +28,51 @@ public class LevelsManager {
 		json.setElementType(Level.class, "objective", LevelObjective.class);
 		json.setElementType(Level.class, "difficulty", LevelDifficulty.class);
 		json.setElementType(Level.class, "entities", LevelEntities.class);
-		
-		//construct LevelGoodObject OOP style (inheriting from LevelObject)
+
+		// construct LevelSpecialObject OOP style (inheriting from LevelObject)
+		json.setSerializer(LevelSpecialObject.class, new Json.Serializer<LevelSpecialObject>() {
+
+			@SuppressWarnings("rawtypes")
+			@Override
+			public void write(Json json, LevelSpecialObject object, Class knownType) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@SuppressWarnings("rawtypes")
+			@Override
+			public LevelSpecialObject read(Json json, JsonValue jsonData, Class type) {
+				return new LevelSpecialObject(jsonData.getString("texture"), jsonData.getInt("ratio"),
+						jsonData.getString("action"));
+			}
+		});
+
+		// construct LevelGoodObject OOP style (inheriting from LevelObject)
 		json.setSerializer(LevelGoodObject.class, new Json.Serializer<LevelGoodObject>() {
 
 			@SuppressWarnings("rawtypes")
 			@Override
 			public void write(Json json, LevelGoodObject object, Class knownType) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@SuppressWarnings("rawtypes")
 			@Override
 			public LevelGoodObject read(Json json, JsonValue jsonData, Class type) {
-				return new LevelGoodObject(jsonData.getString("texture"), jsonData.getInt("ratio"),jsonData.getInt("score"));
+				return new LevelGoodObject(jsonData.getString("texture"), jsonData.getInt("ratio"),
+						jsonData.getInt("score"));
 			}
 		});
 
-		//construct LevelBadObject OOP style (inheriting from LevelObject)
+		// construct LevelBadObject OOP style (inheriting from LevelObject)
 		json.setSerializer(LevelBadObject.class, new Json.Serializer<LevelBadObject>() {
 
 			@SuppressWarnings("rawtypes")
 			@Override
 			public void write(Json json, LevelBadObject object, Class knownType) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@SuppressWarnings("rawtypes")
@@ -61,10 +81,11 @@ public class LevelsManager {
 				return new LevelBadObject(jsonData.getString("texture"), jsonData.getInt("ratio"));
 			}
 		});
-		
+
+		json.setElementType(LevelEntities.class, "specialObjects", LevelSpecialObject.class);
 		json.setElementType(LevelEntities.class, "goodObjects", LevelGoodObject.class);
 		json.setElementType(LevelEntities.class, "badObjects", LevelBadObject.class);
-		
+
 		levels = new Levels();
 		levels = json.fromJson(Levels.class, levelsString);
 	}
@@ -73,8 +94,8 @@ public class LevelsManager {
 		if (levels != null && levels.getLevels().size() >= index)
 			curLevel = levels.getLevels().get(index);
 	}
-	public static int getLevelsAmmount()
-	{
+
+	public static int getLevelsAmmount() {
 		return levels.getLevels().size();
 	}
 }

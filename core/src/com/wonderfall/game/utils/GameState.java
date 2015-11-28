@@ -1,19 +1,15 @@
 package com.wonderfall.game.utils;
 
+import java.util.HashMap;
+
 public class GameState {
-
-	public static int LIVES_LEFT;
-	public static int SCORE;
-	public static float TIMER;
-	// USED FOR FASTER SPAWNING VELOCITY / MORE SPAWNING RATE / HIGHER CHANCE TO
-	// SPAWN BOSS
-	public static float DIFFICULTY;
-    public static boolean IS_PAUSED = false;
-
-	public GameState(float initialTimer) {
-		LIVES_LEFT = 0;
-		SCORE = Constants.INITIAL_SCORE;
-		DIFFICULTY = Constants.INITIAL_DIFFICULTY;
-		TIMER = initialTimer;
+	
+	//maps between levels.json specialty object name and player's amount so far
+	public static HashMap<String,Integer> specials = new HashMap<String, Integer>();
+	
+	public static void loadGameState()
+	{
+		specials.put("timeslow", 0);
+		specials.put("nuke", 0);
 	}
 }

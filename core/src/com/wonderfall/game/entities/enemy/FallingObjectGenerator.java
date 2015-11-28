@@ -7,6 +7,7 @@ import com.wonderfall.game.level.entities.LevelEntities;
 import com.wonderfall.game.level.entities.objects.LevelBadObject;
 import com.wonderfall.game.level.entities.objects.LevelGoodObject;
 import com.wonderfall.game.level.entities.objects.LevelObject;
+import com.wonderfall.game.level.entities.objects.LevelSpecialObject;
 import com.wonderfall.game.utils.LevelsManager;
 
 /**
@@ -27,26 +28,29 @@ public class FallingObjectGenerator {
 
 	private LevelEntities levelEntities;
 
-	// 0 - good object, 1 - bad object
+	// 0 - good object, 1 - bad object, 2 - special object
 	private enum ObjectType {
-		GOOD, BAD
+		GOOD, BAD, SPECIAL
 	};
 
 	private ArrayList<ObjectType> biasedObjectType;
 
 	private ArrayList<LevelGoodObject> biasedGoodObject;
 	private ArrayList<LevelBadObject> biasedBadObject;
+	private ArrayList<LevelSpecialObject> biasedSpecialObject;
 
 	public FallingObjectGenerator() {
 
 		levelEntities = LevelsManager.curLevel.getEntities();
 
 		// BIASED OBJECT TYPE INITIALIZATION
-		biasedObjectType = new ArrayList<ObjectType>(levelEntities.getGoodRatio() + levelEntities.getBadRatio());
+		biasedObjectType = new ArrayList<ObjectType>();
 		for (int i = 0; i < levelEntities.getGoodRatio(); i++)
 			biasedObjectType.add(ObjectType.GOOD);
 		for (int i = 0; i < levelEntities.getBadRatio(); i++)
 			biasedObjectType.add(ObjectType.BAD);
+		for (int i = 0; i < levelEntities.getSpecialRatio(); i++)
+			biasedObjectType.add(ObjectType.SPECIAL);
 
 		// BIASED GOOD OBJECT INITIALIZATION
 		biasedGoodObject = new ArrayList<LevelGoodObject>();
@@ -59,6 +63,12 @@ public class FallingObjectGenerator {
 		for (int i = 0; i < levelEntities.getBadObjects().size(); i++)
 			for (int j = 0; j < levelEntities.getBadObjects().get(i).getRatio(); j++)
 				biasedBadObject.add(levelEntities.getBadObjects().get(i));
+		
+		// BIASED SPECIAL OBJECT INITIALIZATION
+		biasedSpecialObject = new ArrayList<LevelSpecialObject>();
+		for (int i = 0; i < levelEntities.getSpecialObjects().size(); i++)
+			for (int j = 0; j < levelEntities.getSpecialObjects().get(i).getRatio(); j++)
+				biasedSpecialObject.add(levelEntities.getSpecialObjects().get(i));
 	}
 
 	/**
@@ -82,6 +92,9 @@ public class FallingObjectGenerator {
 			break;
 		case BAD:
 			generated = biasedBadObject.get(MathUtils.random(0, biasedBadObject.size() - 1));
+			break;
+		case SPECIAL:
+			generated = biasedSpecialObject.get(MathUtils.random(0, biasedSpecialObject.size() - 1));
 			break;
 		}
 		return generated;

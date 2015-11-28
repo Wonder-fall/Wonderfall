@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
-import com.wonderfall.game.utils.GameState;
+import com.wonderfall.game.utils.LevelState;
 
 public class HudStatsActor extends Actor {
 
@@ -18,9 +18,9 @@ public class HudStatsActor extends Actor {
 
 	public HudStatsActor() {
 		Label scoreLabel = new Label("Score:", Assets.skin);
-		score = new Label("" + GameState.SCORE, Assets.skin);
+		score = new Label("" + LevelState.SCORE, Assets.skin);
 		Label timeLeftLabel = new Label("Time Left:", Assets.skin);
-		timeLeft = new Label("" + GameState.TIMER, Assets.skin);
+		timeLeft = new Label("" + LevelState.TIMER, Assets.skin);
 
 		container = new Table(Assets.skin);
 		container.align(Align.topLeft);
@@ -45,7 +45,7 @@ public class HudStatsActor extends Actor {
 	public void act(float delta) {
 		super.act(delta);
 
-		score.setText("" + (int) GameState.SCORE);
-		timeLeft.setText("" + (int) GameState.TIMER);
+		score.setText("" + (int) LevelState.SCORE);
+		timeLeft.setText("" + (int) LevelState.TIMER);
 	}
 }
