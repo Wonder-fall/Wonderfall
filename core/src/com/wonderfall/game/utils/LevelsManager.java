@@ -13,6 +13,11 @@ import com.wonderfall.game.level.entities.objects.LevelGoodObject;
 import com.wonderfall.game.level.entities.objects.LevelSpecialObject;
 import com.wonderfall.game.level.objective.LevelObjective;
 
+/**
+ * From levels json to oop class
+ * @author BarDavid
+ *
+ */
 public class LevelsManager {
 
 	private static Levels levels;

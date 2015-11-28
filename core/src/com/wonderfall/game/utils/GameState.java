@@ -1,7 +1,10 @@
 package com.wonderfall.game.utils;
 
 import java.util.HashMap;
-
+/**
+ * Responsible for holding the entire game state
+ *
+ */
 public class GameState {
 	
 	//maps between levels.json specialty object name and player's amount so far

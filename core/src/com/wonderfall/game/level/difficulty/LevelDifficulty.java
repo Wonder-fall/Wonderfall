@@ -1,5 +1,9 @@
 package com.wonderfall.game.level.difficulty;
-
+/**
+ * 
+ * @author BarDavid
+ *
+ */
 public class LevelDifficulty {
 
 	private float initialSpawnRate;

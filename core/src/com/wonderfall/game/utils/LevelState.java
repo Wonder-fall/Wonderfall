@@ -3,8 +3,6 @@ package com.wonderfall.game.utils;
 /**
  * This class is responsible for specific level state. For general states such
  * as inventory and scores see {@link GameState}
- * 
- *
  */
 public class LevelState {
 

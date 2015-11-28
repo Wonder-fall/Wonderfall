@@ -5,7 +5,11 @@ import java.util.ArrayList;
 import com.wonderfall.game.level.entities.objects.LevelBadObject;
 import com.wonderfall.game.level.entities.objects.LevelGoodObject;
 import com.wonderfall.game.level.entities.objects.LevelSpecialObject;
-
+/**
+ * 
+ * @author BarDavid
+ *
+ */
 public class LevelEntities {
 
 	private String background;
