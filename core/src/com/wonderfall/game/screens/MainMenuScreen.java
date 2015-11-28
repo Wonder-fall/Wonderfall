@@ -18,7 +18,6 @@ import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.entities.background.BackgroundActor;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
-import com.wonderfall.game.utils.LevelsManager;
 
 public class MainMenuScreen implements Screen {
 

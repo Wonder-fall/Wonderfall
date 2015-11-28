@@ -2,6 +2,10 @@ package com.wonderfall.game.level;
 
 import java.util.ArrayList;
 
+import com.wonderfall.game.level.difficulty.LevelDifficulty;
+import com.wonderfall.game.level.entities.LevelEntities;
+import com.wonderfall.game.level.objective.LevelObjective;
+
 public class Level {
 
 	private String name;

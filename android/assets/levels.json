@@ -1,64 +1,828 @@
 {
-  "levels": [
-    {
-      "name": "First Dip",
-      "objective":
-      {
-        "type":"survival",
-        "params":100
-      },
-      "difficulty":
-      {
-        "initialSpawnRate": 1f,
-        "initialSpawnerVelocity": 2f,
-        "initialObjectsVelocity":50f,
-        "increaseOverTime":0.5f
-      },
-      "dependencies": [],
-      "entities":
-      {
-        "background":"background1.jpg"
-      }
-    },
-    {
-      "name": "Second Dip",
-      "objective":
-      {
-        "type":"survival",
-        "params":150
-      },
-      "difficulty":
-      {
-        "initialSpawnRate": 2,
-        "initialSpawnerVelocity": 1,
-        "initialObjectsVelocity":1,
-        "increaseOverTime":1
-      },
-      "dependencies": [],
-      "entities":
-      {
-        "background":"background1.jpg"
-      }
-    },
-    {
-      "name": "Instincts Tester",
-      "objective":
-      {
-        "type":"survival",
-        "params":150
-      },
-      "difficulty":
-      {
-        "initialSpawnRate": 3,
-        "initialSpawnerVelocity": 1,
-        "initialObjectsVelocity":1,
-        "increaseOverTime":1
-      },
-      "dependencies": [],
-      "entities":
-      {
-        "background":"background1.jpg"
-      }
-    }
-  ]
+	"levels": [
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":4,
+				"badRatio":1,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 10,
+						"score": 1
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 50
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "Asteroid Challenge",
+			"objective": {
+				"type": "survival",
+				"params": 150
+			},
+			"difficulty": {
+				"initialSpawnRate": 1.3,
+				"initialSpawnerVelocity": 1.5,
+				"initialObjectsVelocity": 80,
+				"increaseOverTime": 1.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":0,
+				"badRatio":1,
+				"goodObjects": [],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":3,
+				"badRatio":10,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 10
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				]
+			}
+		}
+	]
 }

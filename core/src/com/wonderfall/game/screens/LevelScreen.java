@@ -26,25 +26,26 @@ public class LevelScreen implements Screen {
 	GameState gameState;
 
 	public static PlayerActor player;
-    public static ShellActor shell;
+	public static ShellActor shell;
 	public static BackgroundActor bg;
 	public static EnemyActor enemy;
-	
+
 	public Level curLevel = LevelsManager.curLevel;
 
 	public LevelScreen(WonderfallGame game) {
 		this.game = game;
 		this.gameState = new GameState(curLevel.getObjective().getParams());
 	}
+
 	@Override
 	public void show() {
 		stage = new Stage(new FitViewport(Constants.WORLD_WIDTH, Constants.WORLD_HEIGHT));
 
-        Gdx.input.setInputProcessor(stage);
+		Gdx.input.setInputProcessor(stage);
 
 		player = new PlayerActor(Assets.player);
 		enemy = new EnemyActor(Assets.enemy, LevelsManager.curLevel.getDifficulty());
-        shell = new ShellActor();
+		shell = new ShellActor();
 
 		bg = new BackgroundActor();
 
@@ -54,7 +55,7 @@ public class LevelScreen implements Screen {
 		// player
 		stage.addActor(player);
 		stage.addActor(new PlayerTouchHandlerActor(player));
-		
+
 		// enemy spawner (group)
 		stage.addActor(enemy);
 
@@ -64,16 +65,16 @@ public class LevelScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        if (!GameState.IS_PAUSED) {
-            stage.act(delta);
+		if (!GameState.IS_PAUSED) {
+			stage.act(delta);
 
-            // Indicate all actors performed the act method
-            GameController.triggerFramePassed();
-        }
+			// Indicate all actors performed the act method
+			GameController.triggerFramePassed();
+		}
 
-        stage.draw();
+		stage.draw();
 	}
 
 	@Override
@@ -84,7 +85,7 @@ public class LevelScreen implements Screen {
 
 	@Override
 	public void pause() {
-        GameController.triggerGamePaused();
+		GameController.triggerGamePaused();
 	}
 
 	@Override

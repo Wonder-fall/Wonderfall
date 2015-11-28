@@ -1,4 +1,4 @@
-package com.wonderfall.game.level;
+package com.wonderfall.game.level.objective;
 
 public class LevelObjective {
 

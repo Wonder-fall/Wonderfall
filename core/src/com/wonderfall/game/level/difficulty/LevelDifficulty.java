@@ -1,4 +1,4 @@
-package com.wonderfall.game.level;
+package com.wonderfall.game.level.difficulty;
 
 public class LevelDifficulty {
 

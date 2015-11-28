@@ -2,7 +2,6 @@ package com.wonderfall.game;
 
 import com.badlogic.gdx.Game;
 import com.wonderfall.game.screens.LevelSelectScreen;
-import com.wonderfall.game.screens.MainMenuScreen;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.LevelsManager;
 
@@ -20,7 +19,7 @@ public class WonderfallGame extends Game {
 
 		Assets.load();
 		LevelsManager.loadLevels();
-
+		
 		setScreen(new LevelSelectScreen(this));
 
 	}
