@@ -7,8 +7,10 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
+import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton.ImageTextButtonStyle;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
@@ -26,6 +28,12 @@ public class InventoryActor extends Group {
 	ImageTextButton nukeBtn;
 
 	public InventoryActor() {
+		
+		HorizontalGroup group = new HorizontalGroup();
+		group.setFillParent(true);
+		group.setTouchable(Touchable.enabled);
+		
+		//group.
 		table = new Table(Assets.skin);
 		table.setBounds(0, 0, Constants.WORLD_WIDTH, 64f);
 
@@ -38,21 +46,25 @@ public class InventoryActor extends Group {
 		BitmapFont font = new BitmapFont();
 		font.setColor(Color.FIREBRICK);
 
-		table.add(new ImageTextButton("", new ImageTextButtonStyle(
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
-		table.add(new ImageTextButton("", new ImageTextButtonStyle(
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
-		table.add(new ImageTextButton("", new ImageTextButtonStyle(
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
-		table.add(new ImageTextButton("", new ImageTextButtonStyle(
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
-		table.add(new ImageTextButton("", new ImageTextButtonStyle(
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
+				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
+				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
+		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
 		
 		nukeBtn = new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.throwable_nuke)), null, null, font));
 		nukeBtn.align(Align.topRight);
-		table.add(nukeBtn);
+		group.addActor(nukeBtn);
 		
 		timeBtn = new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.throwable_time)), null, null, font));
@@ -68,9 +80,13 @@ public class InventoryActor extends Group {
 			
 		});
 		
-		table.add(timeBtn);
+		group.addActor(timeBtn);
 		
-		addActor(table);
+		ScrollPane pane = new ScrollPane(group);
+		pane.setBounds(0, 0, Constants.WORLD_WIDTH, 64f);
+		pane.setTouchable(Touchable.enabled);
+		
+		addActor(pane);
 	}
 
 	@Override
