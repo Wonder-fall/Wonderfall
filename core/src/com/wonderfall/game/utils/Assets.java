@@ -50,6 +50,7 @@ public class Assets {
 		throwable3 = new Texture(Gdx.files.internal("throwable/throwable3.png"));
 		throwable4 = new Texture(Gdx.files.internal("throwable/throwable4.png"));
 		throwable_time = new Texture(Gdx.files.internal("throwable/time.png"));
+        throwable_time.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 		throwable_nuke = new Texture(Gdx.files.internal("throwable/nuke.png"));
 		entitiesMap.put("throwable1", throwable1);
 		entitiesMap.put("throwable2", throwable2);
@@ -59,6 +60,8 @@ public class Assets {
 		entitiesMap.put("nuke",throwable_nuke);
 
 		background = new Texture(Gdx.files.internal("backgrounds/background1.png"));
+        background.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+
 		enemy = new Texture(Gdx.files.internal("enemy/enemy.png"));
 		pause = new Texture(Gdx.files.internal("pause.png"));
 		back = new Texture(Gdx.files.internal("back.png"));
