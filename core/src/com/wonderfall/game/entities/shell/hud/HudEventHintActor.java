@@ -31,14 +31,14 @@ public class HudEventHintActor extends Group {
 		}
 	}
 
-	public void showHint(float x, float y, CharSequence hint) {
+	public void showHint(float x, float y, CharSequence hint, float duration) {
 		// instances a new hint label because there can be a dynamic number of
 		// labels on the screen at the same time
 		Label hintLabel = new Label(hint, Assets.skin);
-		//arbitrary position for now TODO
-		hintLabel.setPosition(x, y + 15f);
-		//TODO: FIND THE RIGHT ACTION TO DISPLAY THE LABEL
-		hintLabel.addAction(fadeOut(1.5f));
+		// arbitrary position for now TODO
+		hintLabel.setPosition(x, y);
+		// TODO: FIND THE RIGHT ACTION TO DISPLAY THE LABEL
+		hintLabel.addAction(fadeOut(duration));
 
 		addActor(hintLabel);
 	}

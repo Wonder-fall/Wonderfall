@@ -33,7 +33,7 @@ public class Constants {
 	public static final Vector2 ENEMY_START_POSITION = new Vector2(WORLD_WIDTH / 2, WORLD_HEIGHT);
 	// THE FACTOR IN WHICH THE OBJECTS WILL BE SLOWED WHILE PLAYER USED TIME SLOW
 	public static final float OBJECT_TIME_SLOW_FACTOR = 0.2f;
-	public static final float OBJECT_TIME_SLOW_DURATION = 5f;
+	public static final int OBJECT_TIME_SLOW_DURATION = 5;
 
 	public static final int INITIAL_SCORE = 0;
 	public static final float INITIAL_DIFFICULTY = 0.0f;

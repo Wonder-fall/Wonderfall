@@ -14,6 +14,7 @@ public class LevelState {
 	public static float DIFFICULTY;
 	public static boolean IS_PAUSED = false;
 	public static boolean IS_TIME_SLOWED = false;
+	public static int TIME_SLOW_LEFT = 0;
 
 	public static void loadLevelState(float initialTimer)
 	{

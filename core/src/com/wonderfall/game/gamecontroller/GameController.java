@@ -3,6 +3,7 @@ package com.wonderfall.game.gamecontroller;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Timer;
+import com.wonderfall.game.entities.shell.ShellActor;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.GameState;
 import com.wonderfall.game.utils.LevelState;
@@ -79,22 +80,21 @@ public class GameController {
 		{
 			GameState.specials.put("timeslow", GameState.specials.get("timeslow") - 1);
 			LevelState.IS_TIME_SLOWED = true;
+			LevelState.TIME_SLOW_LEFT = Constants.OBJECT_TIME_SLOW_DURATION;
 			
 			Timer timer = new Timer();
+
 			timer.scheduleTask(new Timer.Task() {
 				
 				@Override
 				public void run() {
-					LevelState.IS_TIME_SLOWED = false;
-					
+					ShellActor.hints.showHint(Constants.WORLD_WIDTH/2, Constants.WORLD_HEIGHT/1.5f, ""+LevelState.TIME_SLOW_LEFT, 0.7f);
+					if (LevelState.TIME_SLOW_LEFT <= 0)
+						LevelState.IS_TIME_SLOWED = false;
+					LevelState.TIME_SLOW_LEFT--;
 				}
-
-				@Override
-				public void cancel() {
-					// TODO Auto-generated method stub
-					
-				}
-			}, Constants.OBJECT_TIME_SLOW_DURATION);
+			}, 0, 1, Constants.OBJECT_TIME_SLOW_DURATION);
+			
 			timer.start();
 			//play some funky sound 
 		}
