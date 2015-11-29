@@ -83,6 +83,8 @@ public class InventoryActor extends Group {
 		group.addActor(timeBtn);
 		
 		ScrollPane pane = new ScrollPane(group);
+		
+		pane.setFlickScroll(true);
 		pane.setBounds(0, 0, Constants.WORLD_WIDTH, 64f);
 		pane.setTouchable(Touchable.enabled);
 		
