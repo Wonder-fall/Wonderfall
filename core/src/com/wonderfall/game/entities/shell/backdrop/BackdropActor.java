@@ -19,7 +19,6 @@ import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.screens.LevelSelectScreen;
-import com.wonderfall.game.screens.MainMenuScreen;
 import com.wonderfall.game.utils.Assets;
 
 public class BackdropActor extends Group {

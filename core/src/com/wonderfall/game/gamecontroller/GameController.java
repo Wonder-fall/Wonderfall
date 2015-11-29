@@ -1,14 +1,8 @@
 package com.wonderfall.game.gamecontroller;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.utils.Timer;
-import com.wonderfall.game.entities.shell.ShellActor;
-import com.wonderfall.game.level.entities.objects.LevelBadObject;
-import com.wonderfall.game.level.entities.objects.LevelGoodObject;
-import com.wonderfall.game.level.entities.objects.LevelSpecialObject;
-import com.wonderfall.game.screens.LevelScreen;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.GameState;
 import com.wonderfall.game.utils.LevelState;
@@ -42,26 +36,11 @@ public class GameController {
 	}
 
 	public static void triggerObjectLoss(Actor actor) {
-		// if a good object was missed, then show the loss label
-		if (actor.getUserObject() instanceof LevelGoodObject)
-			ShellActor.hints.showHint(actor.getX(), actor.getY() + 20f,
-					Constants.OBJECT_LOSS_WORDS[MathUtils.random(0, Constants.OBJECT_LOSS_WORDS.length - 1)]);
-
-		LevelScreen.enemy.removeActor(actor);
+		//play some sound..
 	}
 
 	public static void triggerObjectWin(Actor actor) {
-		LevelScreen.enemy.removeActor(actor);
-
-		// if a good object was hit, take its score and add it to the current
-		// score
-		if (actor.getUserObject() instanceof LevelGoodObject)
-			LevelState.SCORE += ((LevelGoodObject) actor.getUserObject()).getScore();
-		else if (actor.getUserObject() instanceof LevelSpecialObject) {
-			String objAction = ((LevelSpecialObject) actor.getUserObject()).getAction();
-			GameState.specials.put(objAction, GameState.specials.get(objAction) + 1);
-		} else if (actor.getUserObject() instanceof LevelBadObject)
-			triggerGameEnd();
+		//play some sound..
 	}
 
 	public static void triggerFramePassed() {

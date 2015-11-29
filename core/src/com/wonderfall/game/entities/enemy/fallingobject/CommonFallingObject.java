@@ -1,18 +1,17 @@
-package com.wonderfall.game.entities.enemy;
+package com.wonderfall.game.entities.enemy.fallingobject;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.wonderfall.game.entities.BoxedImageActor;
-import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.screens.LevelScreen;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.LevelState;
 
-public class FallingObjectActor extends BoxedImageActor {
+public abstract class CommonFallingObject extends BoxedImageActor implements IFallingObject {
 
 	Vector2 velocity;
 
-	public FallingObjectActor(Texture texture, Vector2 initialPosition, Vector2 velocity) {
+	public CommonFallingObject(Texture texture, Vector2 initialPosition, Vector2 velocity) {
 		super(texture);
 		// x y of the actor
 		setX(initialPosition.x);
@@ -34,12 +33,12 @@ public class FallingObjectActor extends BoxedImageActor {
 		}
 
 		// if hit player
-		if (this.isCollidedWith(LevelScreen.player.getBoundingBox())) {
-			GameController.triggerObjectWin(this);
-		}
+		if (this.isCollidedWith(LevelScreen.player.getBoundingBox()))
+			playerCollision();
+
 		// if hit floor
-		else if (this.getY() < Constants.PLAYER_FLOOR_HEIGHT) {
-			GameController.triggerObjectLoss(this);
-		}
+		else if (this.getY() < Constants.PLAYER_FLOOR_HEIGHT)
+			floorCollision();
+
 	}
 }
