@@ -58,7 +58,7 @@ public class Assets {
 		entitiesMap.put("time", throwable_time);
 		entitiesMap.put("nuke",throwable_nuke);
 
-		background = new Texture(Gdx.files.internal("backgrounds/background1.jpg"));
+		background = new Texture(Gdx.files.internal("backgrounds/background1.png"));
 		enemy = new Texture(Gdx.files.internal("enemy/enemy.png"));
 		pause = new Texture(Gdx.files.internal("pause.png"));
 		back = new Texture(Gdx.files.internal("back.png"));

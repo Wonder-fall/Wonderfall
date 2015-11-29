@@ -16,6 +16,7 @@ import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.level.Level;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
+import com.wonderfall.game.utils.GameState;
 import com.wonderfall.game.utils.LevelState;
 import com.wonderfall.game.utils.LevelsManager;
 
@@ -84,14 +85,15 @@ public class LevelScreen implements Screen {
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
-
+        
 	}
 
 	@Override
 	public void pause() {
-        backdrop.setVisible(true);
-        GameController.triggerGamePaused();
+        if (!LevelState.IS_PAUSED) {
+            backdrop.setVisible(true);
+            GameController.triggerGamePaused();
+        }
 	}
 
 	@Override
