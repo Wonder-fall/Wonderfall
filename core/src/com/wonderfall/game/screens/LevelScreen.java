@@ -16,7 +16,6 @@ import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.level.Level;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
-import com.wonderfall.game.utils.GameState;
 import com.wonderfall.game.utils.LevelState;
 import com.wonderfall.game.utils.LevelsManager;
 

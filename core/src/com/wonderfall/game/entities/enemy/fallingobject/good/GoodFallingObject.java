@@ -34,10 +34,6 @@ public class GoodFallingObject extends CommonFallingObject {
 		// handle the event
 		ShellActor.hints.showHint(this.getX(), this.getY() + 20f,
 				Constants.OBJECT_LOSS_WORDS[MathUtils.random(0, Constants.OBJECT_LOSS_WORDS.length - 1)], 1.5f);
-		// remove actor from its group
-		this.remove();
-		// propagate to GameController
-		GameController.triggerObjectLoss(this);
 	}
 
 	public int getScore() {

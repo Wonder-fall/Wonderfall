@@ -13,16 +13,15 @@ public class BadFallingObject extends CommonFallingObject {
 
 	@Override
 	public void playerCollision() {
-		//handle the event
+		// handle the event
 		GameController.triggerGameEnd();
-		//remove actor from its group
+		// remove actor from its group
 		this.remove();
 	}
 
 	@Override
 	public void floorCollision() {
-		//remove actor from its group
-		this.remove();
+		
 	}
 
 }

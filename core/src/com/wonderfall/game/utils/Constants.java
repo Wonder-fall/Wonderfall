@@ -1,5 +1,6 @@
 package com.wonderfall.game.utils;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -8,6 +9,8 @@ public class Constants {
 	public static final float WORLD_WIDTH = 480f;
 	public static final float WORLD_HEIGHT = 800f;
 
+	public static final float W_H_RATIO = Gdx.graphics.getWidth()/(float)Gdx.graphics.getHeight();
+	
 	// THE FORCE USED ON THE PLAYER AFTER HE JUMPS
 	public static final float GRAVITATIONAL_ACCELERATION = 240f;
 

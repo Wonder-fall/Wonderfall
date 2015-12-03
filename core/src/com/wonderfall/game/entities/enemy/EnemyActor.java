@@ -56,8 +56,8 @@ public class EnemyActor extends Group {
 			
 			final CommonFallingObject newFObj = generator.generate();
 			
-			newFObj.setWidth(64f);
-			newFObj.setHeight(64f);
+			newFObj.setWidth(50f);
+			newFObj.setHeight(50f);
 			
 			// move for 1sec and spawn an object right away
 			addAction(sequence((moveTo(newFObj.getX(), newFObj.getY(), difficulty.getInitialSpawnerVelocity())),
