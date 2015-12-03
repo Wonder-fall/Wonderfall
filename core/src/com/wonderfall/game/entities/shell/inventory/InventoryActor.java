@@ -1,7 +1,5 @@
 package com.wonderfall.game.entities.shell.inventory;
 
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -38,10 +36,6 @@ public class InventoryActor extends Group {
 		group.reverse();
 		group.setSize(Constants.WORLD_WIDTH, 64f);
 
-		// the font for the item count
-		BitmapFont font = new BitmapFont();
-		font.setColor(Color.FIREBRICK);
-
 		/*group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));
 		group.addActor(new ImageTextButton("", new ImageTextButtonStyle(
@@ -58,7 +52,7 @@ public class InventoryActor extends Group {
 				new TextureRegionDrawable(new TextureRegion(Assets.button_unknown)), null, null, font)));*/
 
 		nukeBtn = new ImageTextButton("", new ImageTextButtonStyle(
-				new TextureRegionDrawable(new TextureRegion(Assets.throwable_nuke)), null, null, font));
+				new TextureRegionDrawable(new TextureRegion(Assets.throwable_nuke)), null, null, Assets.font));
 		nukeBtn.align(Align.topRight);
 		group.addActor(nukeBtn);
 
@@ -67,7 +61,7 @@ public class InventoryActor extends Group {
 				Assets.throwable_time.getHeight());
 		
 		timeBtn = new ImageTextButton("",
-				new ImageTextButtonStyle(new TextureRegionDrawable(timeBtnSprite), null, null, font));
+				new ImageTextButtonStyle(new TextureRegionDrawable(timeBtnSprite), null, null, Assets.font));
 		timeBtn.align(Align.topRight);
 
 		timeBtn.setTouchable(Touchable.enabled);

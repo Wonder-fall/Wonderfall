@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Container;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
@@ -57,7 +59,7 @@ public class LevelSelectScreen implements Screen
 
         stage.addActor(background);
 
-        Label title = new Label("Choose a level", Assets.skin);
+        Label title = new Label("Choose a level", new LabelStyle(Assets.font, Color.WHITE));
         Container<Actor> lblContainer = new Container<Actor>(title);
 
         lblContainer.setPosition(Constants.WORLD_WIDTH / 2, (Constants.WORLD_HEIGHT / 10) * 9);
@@ -111,6 +113,7 @@ public class LevelSelectScreen implements Screen
     {
         if(buttonNumber>0&&buttonNumber>buttonList.size()&&buttonNumber<=LevelsManager.getLevelsAmmount()) {
             Integer num = new Integer(buttonNumber);
+            
             TextButton button = new TextButton(num.toString(), Assets.skin);
             table.add(button).size(64f, 64f).space(0,0,36f,36f);
             buttonList.add(button);

@@ -1,8 +1,10 @@
 package com.wonderfall.game.entities.shell.hud;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.utils.Assets;
@@ -17,10 +19,10 @@ public class HudStatsActor extends Actor {
 	Table container;
 
 	public HudStatsActor() {
-		Label scoreLabel = new Label("Score:", Assets.skin);
-		score = new Label("" + LevelState.SCORE, Assets.skin);
-		Label timeLeftLabel = new Label("Time Left:", Assets.skin);
-		timeLeft = new Label("" + LevelState.TIMER, Assets.skin);
+		Label scoreLabel = new Label("Score:", new LabelStyle(Assets.font, Color.WHITE));
+		score = new Label("" + LevelState.SCORE, new LabelStyle(Assets.font, Color.WHITE));
+		Label timeLeftLabel = new Label("Time Left:", new LabelStyle(Assets.font, Color.WHITE));
+		timeLeft = new Label("" + LevelState.TIMER, new LabelStyle(Assets.font, Color.WHITE));
 
 		container = new Table(Assets.skin);
 		container.align(Align.topLeft);

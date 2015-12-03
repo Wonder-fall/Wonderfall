@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 /**
@@ -34,6 +37,8 @@ public class Assets {
 	public static Texture button_locked;
 	public static Texture button_unknown;
 
+	public static BitmapFont font;
+
 	// HERE GOES ALL ITEMS LOADED DIFFERENTLY IN EACH LEVEL
 	// BECAUSE IN THE JSON YOU SHOULD SAVE STRINGS
 	// IT IS A TEMP USE BECAUSE A TEXTUREATLAS ALREADY HAS STRING REFERENCES
@@ -50,17 +55,17 @@ public class Assets {
 		throwable3 = new Texture(Gdx.files.internal("throwable/throwable3.png"));
 		throwable4 = new Texture(Gdx.files.internal("throwable/throwable4.png"));
 		throwable_time = new Texture(Gdx.files.internal("throwable/time.png"));
-        throwable_time.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+		throwable_time.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 		throwable_nuke = new Texture(Gdx.files.internal("throwable/nuke.png"));
 		entitiesMap.put("throwable1", throwable1);
 		entitiesMap.put("throwable2", throwable2);
 		entitiesMap.put("throwable3", throwable3);
 		entitiesMap.put("throwable4", throwable4);
 		entitiesMap.put("time", throwable_time);
-		entitiesMap.put("nuke",throwable_nuke);
+		entitiesMap.put("nuke", throwable_nuke);
 
 		background = new Texture(Gdx.files.internal("backgrounds/background1.png"));
-        background.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+		background.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
 
 		enemy = new Texture(Gdx.files.internal("enemy/enemy.png"));
 		pause = new Texture(Gdx.files.internal("pause.png"));
@@ -69,5 +74,16 @@ public class Assets {
 		button = new Texture(Gdx.files.internal("buttons/button_enabled.png"));
 		button_locked = new Texture(Gdx.files.internal("buttons/button_locked.png"));
 		button_unknown = new Texture(Gdx.files.internal("buttons/button_unknown.png"));
+
+		//TODO: ARRAGE THE FONT M
+		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
+		parameter.size = (int) Math.ceil(20);
+		
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Snaps Taste.otf"));
+
+		generator.scaleForPixelHeight((int) Math.ceil(20));
+		parameter.minFilter = Texture.TextureFilter.Linear;
+		parameter.magFilter = Texture.TextureFilter.Linear;
+		font = generator.generateFont(parameter); // font size 12 pixels
 	}
 }

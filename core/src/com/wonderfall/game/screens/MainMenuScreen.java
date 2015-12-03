@@ -6,6 +6,7 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Container;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.entities.background.BackgroundActor;
@@ -64,7 +66,7 @@ public class MainMenuScreen implements Screen {
 		stage.addActor(background);
 
 		// resizing label actor
-		Label hintLbl = new Label("Tap to start", Assets.skin);
+		Label hintLbl = new Label("Tap to start", new LabelStyle(Assets.font, Color.WHITE));
 		Container<Actor> lblContainer = new Container<Actor>(hintLbl);
 
 		lblContainer.setPosition(Constants.WORLD_WIDTH / 2, Constants.WORLD_HEIGHT / 2);
