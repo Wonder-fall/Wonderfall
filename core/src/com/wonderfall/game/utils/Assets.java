@@ -33,9 +33,12 @@ public class Assets {
 	public static Texture pause;
 	public static Texture resume;
 	public static Texture back;
-	public static Texture button;
-	public static Texture button_locked;
 	public static Texture button_unknown;
+	
+	public static Texture button_0star;
+	public static Texture button_1star;
+	public static Texture button_2star;
+	public static Texture button_3star;
 
 	public static BitmapFont font;
 
@@ -71,9 +74,12 @@ public class Assets {
 		pause = new Texture(Gdx.files.internal("pause.png"));
 		back = new Texture(Gdx.files.internal("back.png"));
 		resume = new Texture(Gdx.files.internal("play.png"));
-		button = new Texture(Gdx.files.internal("buttons/button_enabled.png"));
-		button_locked = new Texture(Gdx.files.internal("buttons/button_locked.png"));
+		//buttons
 		button_unknown = new Texture(Gdx.files.internal("buttons/button_unknown.png"));
+		button_0star= new Texture(Gdx.files.internal("buttons/nostar.png"));
+		button_1star= new Texture(Gdx.files.internal("buttons/1star.png"));
+		button_2star= new Texture(Gdx.files.internal("buttons/2star.png"));
+		button_3star= new Texture(Gdx.files.internal("buttons/3star.png"));
 
 		//TODO: ARRAGE THE FONT M
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
