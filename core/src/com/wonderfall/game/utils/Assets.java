@@ -3,6 +3,7 @@ package com.wonderfall.game.utils;
 import java.util.HashMap;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
@@ -34,13 +35,15 @@ public class Assets {
 	public static Texture resume;
 	public static Texture back;
 	public static Texture button_unknown;
-	
+
 	public static Texture button_0star;
 	public static Texture button_1star;
 	public static Texture button_2star;
 	public static Texture button_3star;
 
 	public static BitmapFont font;
+
+	private static Preferences gameData;
 
 	// HERE GOES ALL ITEMS LOADED DIFFERENTLY IN EACH LEVEL
 	// BECAUSE IN THE JSON YOU SHOULD SAVE STRINGS
@@ -49,6 +52,9 @@ public class Assets {
 	public static HashMap<String, Texture> entitiesMap = new HashMap<String, Texture>();
 
 	public static void load() {
+		// current levels,high score,items
+		gameData = Gdx.app.getPreferences("wonderfall");
+
 		skin = new Skin(Gdx.files.internal("data/uiskin.json"));
 
 		player = new Texture(Gdx.files.internal("player/player.png"));
@@ -74,22 +80,31 @@ public class Assets {
 		pause = new Texture(Gdx.files.internal("pause.png"));
 		back = new Texture(Gdx.files.internal("back.png"));
 		resume = new Texture(Gdx.files.internal("play.png"));
-		//buttons
+		// buttons
 		button_unknown = new Texture(Gdx.files.internal("buttons/button_unknown.png"));
-		button_0star= new Texture(Gdx.files.internal("buttons/nostar.png"));
-		button_1star= new Texture(Gdx.files.internal("buttons/1star.png"));
-		button_2star= new Texture(Gdx.files.internal("buttons/2star.png"));
-		button_3star= new Texture(Gdx.files.internal("buttons/3star.png"));
+		button_0star = new Texture(Gdx.files.internal("buttons/nostar.png"));
+		button_1star = new Texture(Gdx.files.internal("buttons/1star.png"));
+		button_2star = new Texture(Gdx.files.internal("buttons/2star.png"));
+		button_3star = new Texture(Gdx.files.internal("buttons/3star.png"));
 
-		//TODO: ARRAGE THE FONT M
+		// TODO: ARRAGE THE FONT M
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 		parameter.size = (int) Math.ceil(20);
-		
+
 		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("data/Snaps Taste.otf"));
 
 		generator.scaleForPixelHeight((int) Math.ceil(20));
 		parameter.minFilter = Texture.TextureFilter.Linear;
 		parameter.magFilter = Texture.TextureFilter.Linear;
 		font = generator.generateFont(parameter); // font size 12 pixels
+	}
+
+	public static void setGameData(String key, int val) {
+		gameData.putInteger(key, val);
+		gameData.flush();
+	}
+
+	public static int getGameData(String key) {
+		return gameData.getInteger(key);
 	}
 }
