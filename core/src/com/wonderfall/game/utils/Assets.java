@@ -104,7 +104,8 @@ public class Assets {
 		gameData.flush();
 	}
 
-	public static int getGameData(String key) {
+	public static int getGameData(String key) {// return saved data or 0 if not
+												// exists(or truly 0)
 		return gameData.getInteger(key);
 	}
 }

@@ -4,7 +4,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -17,7 +20,7 @@
 				"background": "background1.jpg",
 				"goodRatio":10,
 				"badRatio":6,
-				"specialRatio":20,
+				"specialRatio":1,
 				"goodObjects": [
 					{
 						"texture": "throwable1",
@@ -54,7 +57,10 @@
 			"name": "Asteroid Challenge",
 			"objective": {
 				"type": "survival",
-				"params": 150
+				"params": 150,
+				"bronze":0,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1.3,
@@ -85,22 +91,25 @@
 			}
 		},
 		{
-			"name": "First Dip",
+			"name": "Second Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
-				"initialSpawnerVelocity": 2,
-				"initialObjectsVelocity": 50,
-				"increaseOverTime": 0.5
+				"initialSpawnerVelocity": 1.6,
+				"initialObjectsVelocity": 85,
+				"increaseOverTime": 2
 			},
 			"dependencies": [],
 			"entities": {
 				"background": "background1.jpg",
-				"goodRatio":0,
-				"badRatio":0,
+				"goodRatio":9,
+				"badRatio":13,
 				"specialRatio":1,
 				"goodObjects": [
 					{
@@ -138,57 +147,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
-			},
-			"difficulty": {
-				"initialSpawnRate": 1,
-				"initialSpawnerVelocity": 2,
-				"initialObjectsVelocity": 50,
-				"increaseOverTime": 0.5
-			},
-			"dependencies": [],
-			"entities": {
-				"background": "background1.jpg",
-				"goodRatio":10,
-				"badRatio":6,
-				"specialRatio":1,
-				"goodObjects": [
-					{
-						"texture": "throwable1",
-						"ratio": 10,
-						"score": 1
-					},
-					{
-						"texture": "throwable2",
-						"ratio": 1,
-						"score": 50
-					},
-					{
-						"texture": "throwable3",
-						"ratio": 1,
-						"score": 10
-					}
-				],
-				"badObjects": [
-					{
-						"texture": "throwable4",
-						"ratio": 1
-					}
-				],
-				"specialObjects": [
-					{
-						"texture": "time",
-						"ratio": "1",
-						"action": "timeslow"
-					}
-				]
-			}
-		},
-		{
-			"name": "First Dip",
-			"objective": {
-				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -238,7 +200,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -288,7 +253,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -338,7 +306,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -388,7 +359,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -438,7 +412,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -488,7 +465,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -538,7 +518,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -588,7 +571,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -638,7 +624,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -688,7 +677,10 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,
@@ -738,7 +730,63 @@
 			"name": "First Dip",
 			"objective": {
 				"type": "survival",
-				"params": 100
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
+			},
+			"difficulty": {
+				"initialSpawnRate": 1,
+				"initialSpawnerVelocity": 2,
+				"initialObjectsVelocity": 50,
+				"increaseOverTime": 0.5
+			},
+			"dependencies": [],
+			"entities": {
+				"background": "background1.jpg",
+				"goodRatio":10,
+				"badRatio":6,
+				"specialRatio":1,
+				"goodObjects": [
+					{
+						"texture": "throwable1",
+						"ratio": 10,
+						"score": 1
+					},
+					{
+						"texture": "throwable2",
+						"ratio": 1,
+						"score": 50
+					},
+					{
+						"texture": "throwable3",
+						"ratio": 1,
+						"score": 10
+					}
+				],
+				"badObjects": [
+					{
+						"texture": "throwable4",
+						"ratio": 1
+					}
+				],
+				"specialObjects": [
+					{
+						"texture": "time",
+						"ratio": "1",
+						"action": "timeslow"
+					}
+				]
+			}
+		},
+		{
+			"name": "First Dip",
+			"objective": {
+				"type": "survival",
+				"params": 100,
+				"bronze":50,
+				"silver":75,
+				"gold":100
 			},
 			"difficulty": {
 				"initialSpawnRate": 1,

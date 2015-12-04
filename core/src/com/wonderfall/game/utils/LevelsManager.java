@@ -99,6 +99,12 @@ public class LevelsManager {
 		if (levels != null && levels.getLevels().size() >= index)
 			curLevel = levels.getLevels().get(index);
 	}
+	
+	public static Level getLevel(int index) {
+		if (levels != null && levels.getLevels().size() >= index)
+			return levels.getLevels().get(index);
+		return null;
+	}
 
 	public static int getLevelsAmmount() {
 		return levels.getLevels().size();

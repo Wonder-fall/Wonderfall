@@ -21,6 +21,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.entities.background.BackgroundActor;
+import com.wonderfall.game.level.objective.LevelObjective;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.LevelsManager;
@@ -112,10 +113,36 @@ public class LevelSelectScreen implements Screen {
 		if (buttonNumber > 0 && buttonNumber > buttonList.size() && buttonNumber <= LevelsManager.getLevelsAmmount()) {
 			Integer num = new Integer(buttonNumber);
 
-			ImageTextButton button = new ImageTextButton(num.toString(), new ImageTextButtonStyle(
-					new TextureRegionDrawable(new TextureRegion(Assets.button_3star)), null, null, Assets.font));
+			// check if user played this level, and if he does, check if his
+			// score is above the bronze/silver/gold requirements
+			int lvlScore = Assets.getGameData("level_" + (buttonNumber - 1) + "_score");
+
+			TextureRegion btnTexture;
+			// if user played this level
+			if (lvlScore > 0) {
+				LevelObjective lvlObjective = LevelsManager.getLevel(buttonNumber - 1).getObjective();
+
+				if (lvlScore > lvlObjective.getBronze()) // if player is
+															// entitled to
+															// bronze
+					btnTexture = new TextureRegion(Assets.button_1star);
+				else if (lvlScore > lvlObjective.getSilver()) // if player is
+																// entitled to
+																// silver
+					btnTexture = new TextureRegion(Assets.button_2star);
+				else if (lvlScore > lvlObjective.getGold()) // if player is
+															// entitled to gold
+					btnTexture = new TextureRegion(Assets.button_3star);
+				else
+					btnTexture = new TextureRegion(Assets.button_0star);
+			} else {
+				btnTexture = new TextureRegion(Assets.button_0star);
+			}
+
+			ImageTextButton button = new ImageTextButton(num.toString(),
+					new ImageTextButtonStyle(new TextureRegionDrawable(btnTexture), null, null, Assets.font));
 			button.align(Align.top).padTop(13f);
-			
+
 			table.add(button).size(64f, 64f).space(0, 0, 14f, 14f);
 			buttonList.add(button);
 			button.addListener(new ChangeListener() {
