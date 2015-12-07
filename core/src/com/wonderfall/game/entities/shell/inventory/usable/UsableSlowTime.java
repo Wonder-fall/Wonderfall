@@ -1,4 +1,4 @@
-package com.wonderfall.game.entities.shell.inventory;
+package com.wonderfall.game.entities.shell.inventory.usable;
 
 import com.badlogic.gdx.utils.Timer;
 import com.wonderfall.game.entities.shell.ShellActor;

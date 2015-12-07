@@ -11,7 +11,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.wonderfall.game.entities.enemy.fallingobject.CommonFallingObject;
 import com.wonderfall.game.entities.enemy.fallingobject.FallingObjectGenerator;
-import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.level.difficulty.LevelDifficulty;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.LevelState;
@@ -66,7 +65,6 @@ public class EnemyActor extends Group {
 						@Override
 						public void run() {
 							addActor(newFObj);
-							GameController.triggerEnemySpawn(newFObj);
 						}
 					})));
 		}

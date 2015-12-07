@@ -1,4 +1,4 @@
-package com.wonderfall.game.entities.shell.inventory;
+package com.wonderfall.game.entities.shell.inventory.usable;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton;

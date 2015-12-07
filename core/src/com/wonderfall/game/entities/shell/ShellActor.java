@@ -17,7 +17,6 @@ import com.wonderfall.game.entities.shell.backdrop.BackdropActor;
 import com.wonderfall.game.entities.shell.hud.HudEventHintActor;
 import com.wonderfall.game.entities.shell.hud.HudStatsActor;
 import com.wonderfall.game.entities.shell.inventory.InventoryActor;
-import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.LevelState;
 
@@ -55,7 +54,6 @@ public class ShellActor extends Group {
             public void clicked(InputEvent event, float x, float y) {
                 if (!LevelState.IS_PAUSED) {
                     backdrop.setVisible(true);
-                    GameController.triggerGamePaused();
                 }
             }
         });

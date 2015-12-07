@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.wonderfall.game.entities.enemy.fallingobject.CommonFallingObject;
-import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.utils.Assets;
 
 public class SpecialFallingObject extends CommonFallingObject {
@@ -30,8 +29,6 @@ public class SpecialFallingObject extends CommonFallingObject {
 		Assets.setGameData(speciality, Assets.getGameData(speciality) + 1);
 		// remove actor from its group
 		this.remove();
-		// propagate to GameController
-		GameController.triggerObjectWin(this);
 	}
 
 	@Override

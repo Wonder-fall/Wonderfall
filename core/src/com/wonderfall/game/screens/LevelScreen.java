@@ -91,7 +91,6 @@ public class LevelScreen implements Screen {
 	public void pause() {
         if (!LevelState.IS_PAUSED) {
             backdrop.setVisible(true);
-            GameController.triggerGamePaused();
         }
 	}
 

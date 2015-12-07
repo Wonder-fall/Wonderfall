@@ -5,7 +5,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.wonderfall.game.entities.enemy.fallingobject.CommonFallingObject;
 import com.wonderfall.game.entities.shell.ShellActor;
-import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.utils.Constants;
 import com.wonderfall.game.utils.LevelState;
 
@@ -23,10 +22,9 @@ public class GoodFallingObject extends CommonFallingObject {
 	public void playerCollision() {
 		// handle the event
 		LevelState.SCORE += score;
+		ShellActor.hints.showHint(this.getX(), this.getY()+5f, "+"+score, 1.1f);
 		// remove actor from its group
 		this.remove();
-		// propagate to GameController
-		GameController.triggerObjectWin(this);
 	}
 
 	@Override

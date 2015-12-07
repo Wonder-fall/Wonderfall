@@ -1,7 +1,6 @@
 package com.wonderfall.game.gamecontroller;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.wonderfall.game.utils.LevelState;
 import com.wonderfall.game.utils.LevelsManager;
 
@@ -20,26 +19,6 @@ import com.wonderfall.game.utils.LevelsManager;
  */
 public class GameController {
 
-	public static void triggerPlayerJump() {
-
-	}
-
-	public static void triggerPlayerMove() {
-
-	}
-
-	public static void triggerEnemySpawn(Actor actor) {
-
-	}
-
-	public static void triggerObjectLoss(Actor actor) {
-		// play some sound..
-	}
-
-	public static void triggerObjectWin(Actor actor) {
-		// play some sound..
-	}
-
 	public static void triggerFramePassed() {
 
 		LevelState.TIMER -= Gdx.graphics.getDeltaTime();
@@ -51,14 +30,6 @@ public class GameController {
 
 	}
 
-	public static void triggerGamePaused() {
-		LevelState.IS_PAUSED = true;
-	}
-
-	public static void triggerGameResumed() {
-		LevelState.IS_PAUSED = false;
-	}
-
 	/**
 	 * Called on game end due to time or object hit.
 	 */
@@ -68,9 +39,5 @@ public class GameController {
 		} else {// game ended due to object hit
 			System.exit(0);
 		}
-	}
-
-	public static void triggerTimeSlow() {
-		
 	}
 }

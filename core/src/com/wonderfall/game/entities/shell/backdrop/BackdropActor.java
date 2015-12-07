@@ -17,7 +17,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.wonderfall.game.WonderfallGame;
-import com.wonderfall.game.gamecontroller.GameController;
 import com.wonderfall.game.screens.LevelSelectScreen;
 import com.wonderfall.game.utils.Assets;
 
@@ -54,7 +53,6 @@ public class BackdropActor extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 self.setVisible(false);
-                GameController.triggerGameResumed();
             }
         });
 
@@ -62,7 +60,6 @@ public class BackdropActor extends Group {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 self.setVisible(false);
-                GameController.triggerGameResumed();
                 game.setScreen(new LevelSelectScreen(game));
             }
         });

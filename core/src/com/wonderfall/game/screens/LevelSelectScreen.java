@@ -149,7 +149,7 @@ public class LevelSelectScreen implements Screen {
 				@Override
 				public void changed(ChangeEvent event, Actor actor) {
 					LevelsManager.setLevel(buttonNumber - 1);
-					game.setScreen(new MainMenuScreen(game));
+					game.setScreen(new LevelLoadingScreen(game));
 				}
 			});
 		}

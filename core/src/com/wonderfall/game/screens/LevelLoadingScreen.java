@@ -2,7 +2,7 @@ package com.wonderfall.game.screens;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.forever;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.scaleBy;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -20,13 +20,14 @@ import com.wonderfall.game.WonderfallGame;
 import com.wonderfall.game.entities.background.BackgroundActor;
 import com.wonderfall.game.utils.Assets;
 import com.wonderfall.game.utils.Constants;
+import com.wonderfall.game.utils.LevelsManager;
 
-public class MainMenuScreen implements Screen {
+public class LevelLoadingScreen implements Screen {
 
 	WonderfallGame game;
 	Stage stage;
 
-	public MainMenuScreen(WonderfallGame game) {
+	public LevelLoadingScreen(WonderfallGame game) {
 		this.game = game;
 	}
 
@@ -65,15 +66,24 @@ public class MainMenuScreen implements Screen {
 
 		stage.addActor(background);
 
-		// resizing label actor
-		Label hintLbl = new Label("Tap to start", new LabelStyle(Assets.font, Color.WHITE));
-		Container<Actor> lblContainer = new Container<Actor>(hintLbl);
+		// rotating level name actor
+		Label lvlNameLbl = new Label(LevelsManager.curLevel.getName(), new LabelStyle(Assets.font, Color.WHITE));
+		Container<Actor> lvlName = new Container<Actor>(lvlNameLbl);
 
-		lblContainer.setPosition(Constants.WORLD_WIDTH / 2, Constants.WORLD_HEIGHT / 2);
-		lblContainer.setTransform(true);
-		lblContainer.addAction(forever(sequence(scaleBy(0.3f, 0.3f, 1f), scaleBy(-0.3f, -0.3f, 1f))));
+		lvlName.setPosition(Constants.WORLD_WIDTH / 2, Constants.WORLD_HEIGHT / 1.3f);
+		//lvlName.setTransform(true);
+		//lvlName.addAction(forever(sequence(rotateTo(5f, 1f),rotateTo(-5f,1f))));
 
-		stage.addActor(lblContainer);
+		// resizing(zoom in-zoom out) label actor
+		Label tapToStartLbl = new Label("Tap to start", new LabelStyle(Assets.font, Color.WHITE));
+		Container<Actor> tapToStart = new Container<Actor>(tapToStartLbl);
+
+		tapToStart.setPosition(Constants.WORLD_WIDTH / 2, Constants.WORLD_HEIGHT / 2);
+		tapToStart.setTransform(true);
+		tapToStart.addAction(forever(sequence(scaleBy(0.3f, 0.3f, 1f), scaleBy(-0.3f, -0.3f, 1f))));
+
+		stage.addActor(lvlName);
+		stage.addActor(tapToStart);
 	}
 
 	@Override
